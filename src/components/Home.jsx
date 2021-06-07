@@ -1,13 +1,14 @@
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import React from "react";
-import { DisplayImage, IconsWrapper } from "./styledComponents";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
-import { GitHub, LinkedIn, Mail } from "@material-ui/icons";
-import IconButton from "@material-ui/core/IconButton";
-import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
+import { GitHub, LinkedIn, Mail } from "@material-ui/icons";
+import { DisplayImage, IconsWrapper } from "./styledComponents";
+import { Link as RouterLink } from "react-router-dom";
+import React, { useEffect } from "react";
+import particles from "../particles";
 
 const useStyles = makeStyles({
   root: {
@@ -19,19 +20,41 @@ const useStyles = makeStyles({
   buttonGroup: {
     margin: "20px 0 20px 0",
   },
+  gitHub: {
+    color: "#e0e0e0",
+    "&:hover": {
+      color: "white",
+    },
+  },
+  linkedIn: {
+    color: "#0072b1",
+    "&:hover": {
+      color: "#328ec0",
+    },
+  },
+  mail: {
+    color: "#ea4335",
+    "&:hover": {
+      color: "#ee685d",
+    },
+  },
 });
 
 const Home = () => {
   const classes = useStyles();
+  useEffect(() => {
+    window.particlesJS("particles-js", particles);
+  }, []);
 
   return (
     <Container className={classes.root} maxWidth="sm">
       <DisplayImage>
         <Link
-          color="inherit"
+          className={classes.gitHub}
           href="https://github.com/Harvok17/portfolio"
           target="_blank"
           underline="none"
+          rel="noreferrer"
         >
           <GitHub fontSize="large" />
           <br />
@@ -50,34 +73,42 @@ const Home = () => {
         variant="contained"
         size="large"
       >
-        <Button>My Projects</Button>
+        <Button component={RouterLink} to="/projects">
+          My Projects
+        </Button>
         <Button
-          variant="contained"
           color="secondary"
           href="https://www.google.com"
           target="_blank"
+          rel="noreferrer"
         >
           Download CV
         </Button>
       </ButtonGroup>
       <IconsWrapper>
-        <IconButton
-          color="inherit"
+        <Link
+          className={classes.gitHub}
           href="https://github.com/Harvok17"
           target="_blank"
+          rel="noreferrer"
         >
           <GitHub fontSize="large" />
-        </IconButton>
-        <IconButton
-          color="inherit"
+        </Link>
+        <Link
+          className={classes.linkedIn}
           href="https://www.linkedin.com/in/j-h-g/"
           target="_blank"
+          rel="noreferrer"
         >
           <LinkedIn fontSize="large" />
-        </IconButton>
-        <IconButton color="inherit" href="mailto:jhgranfil@gmail.com">
+        </Link>
+        <Link
+          className={classes.mail}
+          href="mailto:jhgranfil@gmail.com"
+          rel="noreferrer"
+        >
           <Mail fontSize="large" />
-        </IconButton>
+        </Link>
       </IconsWrapper>
     </Container>
   );

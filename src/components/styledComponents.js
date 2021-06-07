@@ -5,6 +5,15 @@ export const Wrapper = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+`;
+
+export const Particles = styled.div`
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #262626;
 `;
 
 export const MainWrapper = styled.div`
@@ -17,14 +26,6 @@ export const Footer = styled.footer`
   justify-content: center;
   align-items: center;
   padding: 20px;
-`;
-
-export const Particles = styled.div`
-  z-index: -1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #262626;
 `;
 
 export const DisplayImage = styled.div`
@@ -60,4 +61,9 @@ export const IconsWrapper = styled.div`
   margin: auto;
   display: flex;
   justify-content: space-around;
+`;
+
+export const SliderWrapper = styled.div`
+  height: 250px;
+  position: relative;
 `;
