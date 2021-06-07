@@ -7,6 +7,9 @@ import Link from "@material-ui/core/Link";
 import { GitHub, LinkedIn, Mail } from "@material-ui/icons";
 import { DisplayImage, IconsWrapper } from "./styledComponents";
 import { Link as RouterLink } from "react-router-dom";
+import Pdf from "../assests/resume.pdf";
+import { useEffect } from "react";
+import particles from "../particles";
 
 const useStyles = makeStyles({
   root: {
@@ -41,6 +44,14 @@ const useStyles = makeStyles({
 const Home = () => {
   const classes = useStyles();
 
+  useEffect(() => {
+    window.particlesJS("particles-js", particles);
+    return () => {
+      window.pJSDom[0].pJS.fn.vendors.destroypJS();
+      window["pJSDom"] = [];
+    };
+  }, []);
+
   return (
     <Container className={classes.root} maxWidth="sm">
       <DisplayImage>
@@ -73,7 +84,8 @@ const Home = () => {
         </Button>
         <Button
           color="secondary"
-          href="https://www.google.com"
+          download
+          href={Pdf}
           target="_blank"
           rel="noreferrer"
         >

@@ -15,4 +15,4 @@ Thanks for checking out my portfolio website and repository.
 
 - [Netlify](https://www.netlify.com/)
 
-### View live:
+### View live: [harveygranfil.dev](https://www.harveygranfil.dev/)

@@ -13,7 +13,7 @@ export const Particles = styled.div`
   z-index: -1;
   position: absolute;
   width: 100%;
-  height: 500vh;
+  height: 100%;
   background-color: #262626;
 `;
 
