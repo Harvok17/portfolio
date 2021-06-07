@@ -7,8 +7,6 @@ import Link from "@material-ui/core/Link";
 import { GitHub, LinkedIn, Mail } from "@material-ui/icons";
 import { DisplayImage, IconsWrapper } from "./styledComponents";
 import { Link as RouterLink } from "react-router-dom";
-import React, { useEffect } from "react";
-import particles from "../particles";
 
 const useStyles = makeStyles({
   root: {
@@ -42,9 +40,6 @@ const useStyles = makeStyles({
 
 const Home = () => {
   const classes = useStyles();
-  useEffect(() => {
-    window.particlesJS("particles-js", particles);
-  }, []);
 
   return (
     <Container className={classes.root} maxWidth="sm">

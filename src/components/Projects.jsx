@@ -5,14 +5,8 @@ import React from "react";
 import { Button, Container, Typography } from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
 import ArrowBackIosRounded from "@material-ui/icons/ArrowBackIosRounded";
-import particles from "../particles";
-import { useEffect } from "react";
 
 const Projects = () => {
-  useEffect(() => {
-    window.particlesJS("particles-js", particles);
-  }, []);
-
   return (
     <Container>
       <Button

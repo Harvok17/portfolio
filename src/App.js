@@ -1,10 +1,12 @@
 import { Footer, MainWrapper } from "./components/styledComponents";
 import Home from "./components/Home";
+import Projects from "./components/Projects";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { blueGrey, grey } from "@material-ui/core/colors";
 import { Switch, Route } from "react-router-dom";
-import Projects from "./components/Projects";
+import { useEffect } from "react";
+import particles from "./particles";
 
 const theme = createMuiTheme({
   palette: {
@@ -18,6 +20,8 @@ const theme = createMuiTheme({
 });
 
 function App() {
+  useEffect(() => window.particlesJS("particles-js", particles), []);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
