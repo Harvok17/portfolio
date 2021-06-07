@@ -14,7 +14,7 @@ import particles from "../particles";
 const useStyles = makeStyles({
   root: {
     textAlign: "center",
-    marginTop: "100px",
+    marginTop: "3%",
     fontFamily: "Monospace, Arial",
     color: "#f2f2f2",
   },
