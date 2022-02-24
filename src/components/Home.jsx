@@ -7,7 +7,7 @@ import Link from "@material-ui/core/Link";
 import { GitHub, LinkedIn, Mail } from "@material-ui/icons";
 import { DisplayImage, IconsWrapper } from "./styledComponents";
 import { Link as RouterLink } from "react-router-dom";
-import Pdf from "../assests/resume.pdf";
+import Pdf from "../assests/Web Developer Resume.pdf";
 import { useEffect } from "react";
 import particles from "../particles";
 
